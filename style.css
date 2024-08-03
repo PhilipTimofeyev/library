@@ -21,12 +21,10 @@ box-shadow: 0px 10px 10px black;
 }
 
 .main-buttons btn {
-/*	display: flex;*/
 	justify-content: center;
 	gap: 100px;
 	margin: 50px 0 100px;
 }
-
 
 .book p, h3 {
 	color: white;
@@ -42,7 +40,7 @@ box-shadow: 0px 10px 10px black;
 }
 
 .author {
-	font-style: italic ;
+	font-style: italic;
 	font-size: 1.1em;
 }
 
@@ -125,3 +123,33 @@ box-shadow: 0px 10px 10px black;
   font-weight: 700;
   font-style: normal;
 }
+
+/*MODAL*/
+
+#dialog {
+	padding: 40px;
+	border-radius: 10px;
+}
+
+#dialog div{
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 10px;
+	font-size: 2em;
+	width: 300px;
+}
+
+#dialog p {
+	font-size: 2em;
+	margin-top: 0;
+}
+
+#dialog input {
+	font-size: 1em;
+}
+
+
+
+
+

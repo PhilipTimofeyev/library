@@ -46,18 +46,18 @@
 	   			<label for="book">Pages:</label>
 	   			<input type="number" id="pages" name="pages" required>
 	   		</div>
-	   		<div>
-	   		  <label for="book">Read?:</label>
+	   		<p>
+	 		  	<label for="book">Read:</label>
+	 		  	<input type="radio" id="yes" name="read" value="Read" 	required/>
+	 		  		<label for="read">Yes</label>
+	 		  		<input type="radio" id="yes" name="read" value="Not Read"/>
+	 		    	<label for="read">No</label>
+   		  </p>
 
-	   		    <input type="radio" id="yes" name="read" value="Read" required/>
-	   		    <label for="read">Yes</label>
-
-	   		    <input type="radio" id="yes" name="read" value="Not Read"/>
-	   		    <label for="read">No</label>
-	   		  </div>
-
-	   		<button value="cancel" formnovalidate>Cancel</button>
-	   		<button id="confirm" value="confirm">Submit</button>
+   		  <div>
+   		  <button id="confirm" class="btn" value="confirm">Submit</button>
+	   		<button value="cancel" class="btn" formnovalidate>Cancel</button>
+	   	</div>
 	   	</form>
 	   </dialog>
 	 </div>
