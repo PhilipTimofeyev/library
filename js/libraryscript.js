@@ -1,5 +1,5 @@
-const donQuixote = new Book("Don Quixote", "Miguel de Cervantes")
-const warAndPeace = new Book("War and Peace", "Leo Tolstoy")
+const donQuixote = new Book("Don Quixote", "Miguel de Cervantes", 1072, 'Yes')
+const warAndPeace = new Book("War and Peace", "Leo Tolstoy", 1296, 'Yes')
 
 const myLibrary = [donQuixote, warAndPeace];
 
@@ -21,8 +21,10 @@ function showBooks() {
   for (const book of myLibrary) {
     let tempCopy = document.importNode(item, true);
 
-    tempCopy.querySelector("h3").innerText = `Title: ${book.title}`
-    tempCopy.querySelector("h4").innerText = `Author: ${book.author}`
+    tempCopy.querySelector(".title").innerText = `Title: ${book.title}`;
+    tempCopy.querySelector(".author").innerText = `Author: ${book.author}`;
+    tempCopy.querySelector(".pages").innerText = `Pages: ${book.pages}`;
+    tempCopy.querySelector(".read").innerText = `Read: ${book.read}`
 
     document.body.appendChild(tempCopy)
   }
