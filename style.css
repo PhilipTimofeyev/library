@@ -1,13 +1,29 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url("images/baroque.jpg");
+	background-size: cover
+}
 
 h1 {
 	text-align: center;
+	background-color: #960f0f;
+	padding: 50px;
+	margin: 0;
+	color: white;
+	font-size: 3em;
+
 }
 
 .main-buttons {
 	display: flex;
 	justify-content: center;
 	gap: 100px;
-	margin-bottom: 50px;
+	margin: 50px 0 100px;
+}
+
+.book p, h3 {
+	color: white;
 }
 
 .main-buttons button {
@@ -40,10 +56,9 @@ h1 {
 	padding: 30px;
 	align-items: center;
 	font-size: 1.2em;
-/*	justify-content: center;*/
-	border: solid red;
-/*	width: 200px;*/
-/*	background-color: red;*/
+	box-shadow: 10px 5px 5px black;
+	border: solid black;
+	background-color: #960f0f;
 }
 
 /*BUTTON CSS*/
@@ -51,7 +66,7 @@ h1 {
   align-items: center;
   appearance: none;
   background-color: #3EB2FD;
-  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+  background-image: linear-gradient(1deg, white, #c2b0b0 99%);
   background-size: calc(100% + 20px) calc(100% + 20px);
   border-radius: 100px;
   border-width: 0;
@@ -88,4 +103,19 @@ h1 {
 
 .btn:focus:not(:active){
   box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+
+/*FONTS*/
+
+.asul-regular {
+  font-family: "Asul", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.asul-bold {
+  font-family: "Asul", serif;
+  font-weight: 700;
+  font-style: normal;
 }
