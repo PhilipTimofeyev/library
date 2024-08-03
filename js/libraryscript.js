@@ -74,6 +74,7 @@ modal.addEventListener('close', function (event) {
   let newBook = new Book(title.value, author.value, pages.value, read.value);
 
   addBookToLibrary(newBook)
+  showBooks()
   clearForm()
   }
 });
