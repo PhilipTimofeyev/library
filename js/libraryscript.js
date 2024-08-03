@@ -22,33 +22,41 @@ function showBooks() {
 
   for (const book of myLibrary) {
     let tempCopy = document.importNode(item, true);
+    let removeBookBtn = tempCopy.querySelector(".removeBtn");
 
     tempCopy.querySelector(".title").innerText = `Title: ${book.title}`;
     tempCopy.querySelector(".author").innerText = `Author: ${book.author}`;
     tempCopy.querySelector(".pages").innerText = `Pages: ${book.pages}`;
-    tempCopy.querySelector(".read").innerText = `Read: ${book.read}`
+    tempCopy.querySelector(".read").innerText = `Read: ${book.read}`;
 
-    document.body.appendChild(tempCopy)
+    document.body.appendChild(tempCopy);
+
+    removeBookBtn.addEventListener('click', function () {
+      bookIndex = myLibrary.findIndex((element) => element.title == book.title);
+      myLibrary.splice(bookIndex, 1)
+      this.parentNode.remove()
+    });
   }
 }
 
-const button = document.getElementById("showBooksBtn")
-const book = document.getElementById("bookName")
+const showBooksBtn = document.getElementById("showBooksBtn")
+const removeBookBtn = document.querySelector(`[data-remove="${document.id}"]`)
 
-button.addEventListener("click", (event) => {
+showBooksBtn.addEventListener("click", (event) => {
   showBooks()
 })
 
-let btn = document.querySelector('[data-show-modal]');
+let addBookBtn = document.querySelector('[data-show-modal]');
 let modal = document.querySelector('dialog');
 let title = document.getElementById('title');
 let author = document.getElementById('author');
 let pages = document.getElementById('pages');
 let read
 
-btn.addEventListener('click', function () {
+addBookBtn.addEventListener('click', function () {
   modal.showModal();
 });
+
 
 modal.addEventListener('close', function (event) {
   if (modal.returnValue === 'cancel') {
@@ -63,7 +71,6 @@ modal.addEventListener('close', function (event) {
   clearForm()
   }
 });
-
 
 function clearForm () {
   title.value = "";
