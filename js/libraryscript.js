@@ -18,6 +18,8 @@ function showBooks() {
   let temp = document.getElementsByTagName("template")[0];
   let item = temp.content
 
+  resetShownBooks()
+
   for (const book of myLibrary) {
     let tempCopy = document.importNode(item, true);
 
@@ -58,7 +60,6 @@ modal.addEventListener('close', function (event) {
   let newBook = new Book(title.value, author.value, pages.value, read.value);
 
   addBookToLibrary(newBook)
-
   clearForm()
   }
 });
@@ -73,4 +74,8 @@ function clearForm () {
 
 function resetRadio() {
   document.querySelector('input[name="read"]').checked = false;
+}
+
+function resetShownBooks() {
+  document.querySelectorAll(".book").forEach(e => e.remove())
 }
