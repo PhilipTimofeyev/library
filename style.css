@@ -6,21 +6,27 @@ body {
 }
 
 h1 {
-	text-align: center;
-	background-color: #960f0f;
-	padding: 50px;
 	margin: 0;
 	color: white;
-	font-size: 3em;
-
+	font-size: 4em;
 }
 
 .main-buttons {
-	display: flex;
+display: flex;
+justify-content: space-evenly;
+background-color: #960f0f;
+padding: 50px;
+margin-bottom: 100px;
+box-shadow: 0px 10px 10px black;
+}
+
+.main-buttons btn {
+/*	display: flex;*/
 	justify-content: center;
 	gap: 100px;
 	margin: 50px 0 100px;
 }
+
 
 .book p, h3 {
 	color: white;
@@ -66,7 +72,7 @@ h1 {
   align-items: center;
   appearance: none;
   background-color: #3EB2FD;
-  background-image: linear-gradient(1deg, white, #c2b0b0 99%);
+  background-image: linear-gradient(1deg, #332d2d, #332d2d 99%);
   background-size: calc(100% + 20px) calc(100% + 20px);
   border-radius: 100px;
   border-width: 0;
@@ -75,7 +81,7 @@ h1 {
   color: #FFFFFF;
   cursor: pointer;
   display: inline-flex;
-  font-family: CircularStd,sans-serif;
+/*  font-family: CircularStd,sans-serif;*/
   font-size: .9rem;
   height: auto;
   justify-content: center;
