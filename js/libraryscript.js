@@ -40,17 +40,36 @@ let modal = document.querySelector('dialog');
 let title = document.getElementById('title');
 let author = document.getElementById('author');
 let pages = document.getElementById('pages');
+let read
 
 btn.addEventListener('click', function () {
   modal.showModal();
 });
 
 modal.addEventListener('close', function (event) {
-  if (modal.returnValue === 'cancel') return;
+  if (modal.returnValue === 'cancel') {
+    clearForm();
+    return;
+  } else {
   let read = document.querySelector('input[name="read"]:checked');
   read = read.value == 'yes' ? true : false;
 
   let newBook = new Book(title.value, author.value, pages.value, read);
 
   addBookToLibrary(newBook)
+
+  clearForm()
+  }
 });
+
+
+function clearForm () {
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+  resetRadio()
+}
+
+function resetRadio() {
+  document.querySelector('input[name="read"]').checked = false;
+}
