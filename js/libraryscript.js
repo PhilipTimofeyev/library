@@ -23,11 +23,17 @@ function showBooks() {
   for (const book of myLibrary) {
     let tempCopy = document.importNode(item, true);
     let removeBookBtn = tempCopy.querySelector(".removeBtn");
+    let changeReadBtn = tempCopy.querySelector(".readBtn");
 
     tempCopy.querySelector(".title").innerText = `Title: ${book.title}`;
     tempCopy.querySelector(".author").innerText = `Author: ${book.author}`;
     tempCopy.querySelector(".pages").innerText = `Pages: ${book.pages}`;
     tempCopy.querySelector(".read").innerText = `Read: ${book.read}`;
+
+    changeReadBtn.addEventListener('click', function () {
+      toggleRead(book)
+      this.parentNode.querySelector(".read").innerText = `Read: ${book.read}`;
+    });
 
     document.body.appendChild(tempCopy);
 
@@ -36,6 +42,7 @@ function showBooks() {
       myLibrary.splice(bookIndex, 1)
       this.parentNode.remove()
     });
+
   }
 }
 
@@ -85,4 +92,14 @@ function resetRadio() {
 
 function resetShownBooks() {
   document.querySelectorAll(".book").forEach(e => e.remove())
+}
+
+function toggleRead(currentBook) {
+  console.log(currentBook)
+
+  if (currentBook.read === 'Yes') {
+    currentBook.read = 'No' 
+  } else {
+    currentBook.read = 'Yes' 
+  }
 }
