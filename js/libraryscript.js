@@ -3,15 +3,15 @@ const warAndPeace = new Book("War and Peace", "Leo Tolstoy")
 
 const myLibrary = [donQuixote, warAndPeace];
 
-function Book(title, author) {
+function Book(title, author, pages, read) {
   this.title = title;
-  this.author = author
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
-function addBookToLibrary() {
-
-  const newBook = new Book()
-  // myLibrary.push(book)
+function addBookToLibrary(book) {
+  myLibrary.push(book)
 }
 
 function showBooks() {
@@ -25,7 +25,6 @@ function showBooks() {
     tempCopy.querySelector("h4").innerText = `Author: ${book.author}`
 
     document.body.appendChild(tempCopy)
-
   }
 }
 
@@ -33,9 +32,25 @@ const button = document.getElementById("showBooksBtn")
 const book = document.getElementById("bookName")
 
 button.addEventListener("click", (event) => {
-  // console.log("book");
   showBooks()
 })
 
+let btn = document.querySelector('[data-show-modal]');
+let modal = document.querySelector('dialog');
+let title = document.getElementById('title');
+let author = document.getElementById('author');
+let pages = document.getElementById('pages');
 
-// console.log(myLibrary)
+btn.addEventListener('click', function () {
+  modal.showModal();
+});
+
+modal.addEventListener('close', function (event) {
+  if (modal.returnValue === 'cancel') return;
+  let read = document.querySelector('input[name="read"]:checked');
+  read = read.value == 'yes' ? true : false;
+
+  let newBook = new Book(title.value, author.value, pages.value, read);
+
+  addBookToLibrary(newBook)
+});
