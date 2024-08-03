@@ -1,0 +1,91 @@
+
+h1 {
+	text-align: center;
+}
+
+.main-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 100px;
+	margin-bottom: 50px;
+}
+
+.main-buttons button {
+	font-size: 1.5em;
+}
+
+.title {
+	text-decoration: underline;
+	font-size: 1.5em;
+}
+
+.author {
+	font-style: italic ;
+	font-size: 1.1em;
+}
+
+.library {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+	gap: 50px;
+	width: 70%;
+	justify-content: center;
+	margin: auto;
+}
+
+.book {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 30px;
+	align-items: center;
+	font-size: 1.2em;
+/*	justify-content: center;*/
+	border: solid red;
+/*	width: 200px;*/
+/*	background-color: red;*/
+}
+
+/*BUTTON CSS*/
+.btn {
+  align-items: center;
+  appearance: none;
+  background-color: #3EB2FD;
+  background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: CircularStd,sans-serif;
+  font-size: .9rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 6px 18px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.btn:active,
+.btn:focus, {
+  outline: none;
+}
+
+.btn:hover {
+  background-position: -20px -20px;
+}
+
+.btn:focus:not(:active){
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
