@@ -7,17 +7,25 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-	    <button id="showBooksBtn">Show Books</button>
-	    <template>
-	    	<div class="book">
-	      	<h3 class="title"></h3>
-	      	<p class="author"></p>
-	      	<p class="pages"></p>
-	      	<p class="read"></p>
-	      	<button class="removeBtn">Remove book</button>
-	      	<button class="readBtn">Toggle Read</button>
-	    	</div>
-	    </template>
+		<h1> My Library </h1>
+		<div class="main-buttons">
+	    <button id="showBooksBtn" class="btn">Show Books</button>
+	    <button data-show-modal id="addBookBtn" class="btn">Add book</button>
+	  </div>
+	  <div class="library">
+    <template>
+    	<div class="book">
+      	<h3 class="title"></h3>
+      	<p class="author"></p>
+      	<p class="pages"></p>
+      	<p class="read"></p>
+      	<div>
+      		<button class="removeBtn btn">Remove book</button>
+      		<button class="readBtn btn">Toggle Read</button>
+      	</div>
+    	</div>
+    </template>
+  </div>
 
 	  <div>
 	   <dialog id="dialog">
@@ -37,10 +45,10 @@
 	   		<div>
 	   		  <label for="book">Read?:</label>
 
-	   		    <input type="radio" id="yes" name="read" value="Yes" required/>
+	   		    <input type="radio" id="yes" name="read" value="Read" required/>
 	   		    <label for="read">Yes</label>
 
-	   		    <input type="radio" id="yes" name="read" value="No"/>
+	   		    <input type="radio" id="yes" name="read" value="Not Read"/>
 	   		    <label for="read">No</label>
 	   		  </div>
 
@@ -49,8 +57,6 @@
 	   	</form>
 	   </dialog>
 	 </div>
-
-	   <button data-show-modal>Add book</button>
 	</body>
 
 	<script type="text/javascript" src="js/libraryscript.js"></script>

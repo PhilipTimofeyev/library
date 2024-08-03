@@ -1,5 +1,5 @@
-const donQuixote = new Book("Don Quixote", "Miguel de Cervantes", 1072, 'Yes')
-const warAndPeace = new Book("War and Peace", "Leo Tolstoy", 1296, 'Yes')
+const donQuixote = new Book("Don Quixote", "Miguel de Cervantes", 1072, 'Read')
+const warAndPeace = new Book("War and Peace", "Leo Tolstoy", 1296, 'Read')
 
 const myLibrary = [donQuixote, warAndPeace];
 
@@ -25,24 +25,23 @@ function showBooks() {
     let removeBookBtn = tempCopy.querySelector(".removeBtn");
     let changeReadBtn = tempCopy.querySelector(".readBtn");
 
-    tempCopy.querySelector(".title").innerText = `Title: ${book.title}`;
-    tempCopy.querySelector(".author").innerText = `Author: ${book.author}`;
-    tempCopy.querySelector(".pages").innerText = `Pages: ${book.pages}`;
-    tempCopy.querySelector(".read").innerText = `Read: ${book.read}`;
+    tempCopy.querySelector(".title").innerText = `${book.title}`;
+    tempCopy.querySelector(".author").innerText = `by ${book.author}`;
+    tempCopy.querySelector(".pages").innerText = `${book.pages} pages`;
+    tempCopy.querySelector(".read").innerText = `${book.read}`;
 
     changeReadBtn.addEventListener('click', function () {
       toggleRead(book)
-      this.parentNode.querySelector(".read").innerText = `Read: ${book.read}`;
+      this.parentNode.parentNode.querySelector(".read").innerText = `${book.read}`;
     });
 
-    document.body.appendChild(tempCopy);
+    document.querySelector(".library").appendChild(tempCopy);
 
     removeBookBtn.addEventListener('click', function () {
       bookIndex = myLibrary.findIndex((element) => element.title == book.title);
       myLibrary.splice(bookIndex, 1)
-      this.parentNode.remove()
+      this.parentNode.parentNode.remove()
     });
-
   }
 }
 
@@ -95,11 +94,10 @@ function resetShownBooks() {
 }
 
 function toggleRead(currentBook) {
-  console.log(currentBook)
 
-  if (currentBook.read === 'Yes') {
-    currentBook.read = 'No' 
+  if (currentBook.read === 'Read') {
+    currentBook.read = 'Not Read' 
   } else {
-    currentBook.read = 'Yes' 
+    currentBook.read = 'Read' 
   }
 }
