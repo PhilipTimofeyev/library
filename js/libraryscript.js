@@ -54,9 +54,8 @@ modal.addEventListener('close', function (event) {
     return;
   } else {
   let read = document.querySelector('input[name="read"]:checked');
-  read = read.value == 'yes' ? true : false;
 
-  let newBook = new Book(title.value, author.value, pages.value, read);
+  let newBook = new Book(title.value, author.value, pages.value, read.value);
 
   addBookToLibrary(newBook)
 
