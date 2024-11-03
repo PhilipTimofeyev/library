@@ -1,29 +1,49 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url("images/baroque.jpg");
-	background-size: cover
+	background: wheat;
+}
+
+:root {
+  --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
+  --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+  --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
+  --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
+  --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
+  --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
+  --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
+};
+
+body {
+	margin: 0;
+	padding: 0;
+	background: wheat;
+}
+
+.main-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 50px;
+}
+
+header {
+	grid-template-rows: auto 1fr auto;
+	padding: 3vw;
+	background-color: burlywood;
 }
 
 h1 {
 	margin: 0;
-	color: white;
-	font-size: 4em;
+	color: brown;
+ 	text-align: center;
+ 	font-size: var(--size-900);
 }
 
 .main-buttons {
-display: flex;
-justify-content: space-evenly;
-background-color: #960f0f;
-padding: 50px;
-margin-bottom: 100px;
-box-shadow: 0px 10px 10px black;
-}
-
-.main-buttons btn {
+	display: flex;
 	justify-content: center;
-	gap: 100px;
-	margin: 50px 0 100px;
+	gap: 20px;
 }
 
 .book p, h3 {
@@ -31,73 +51,65 @@ box-shadow: 0px 10px 10px black;
 }
 
 .main-buttons button {
-	font-size: 1.5em;
-}
+ 	font-size: var(--size-600);
+ 	border: none;
+ 	min-width: 8em;
+ 	min-height: 2em;
 
-.title {
-	text-decoration: underline;
-	font-size: 1.5em;
-}
-
-.author {
-	font-style: italic;
-	font-size: 1.1em;
 }
 
 .library {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+	grid-template-columns: repeat(auto-fill, minmax(0, 380px));
 	gap: 50px;
-	width: 70%;
+	width: 85%;
 	justify-content: center;
-	margin: auto;
+	margin-inline: auto;
+}
+
+.title {
+	text-decoration: underline;
+	text-align: center;
+ 	font-size: var(--size-800);
+}
+
+.author {
+	font-style: italic;
+	text-align: center;
+ 	font-size: var(--size-600);
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+ 	font-size: var(--size-500);
 }
 
 .book {
 	display: flex;
 	flex-direction: column;
-	box-sizing: border-box;
-	padding: 30px;
-	align-items: center;
-	font-size: 1.2em;
+	justify-content: space-evenly;
+	padding: 60px;
+	min-height: 350px;
 	box-shadow: 10px 5px 5px black;
 	border: solid black;
-	background-color: #960f0f;
+	background-color: #9c5b22;
 }
 
 /*BUTTON CSS*/
-.btn {
-  align-items: center;
-  appearance: none;
-  background-color: #3EB2FD;
-  background-image: linear-gradient(1deg, #332d2d, #332d2d 99%);
-  background-size: calc(100% + 20px) calc(100% + 20px);
-  border-radius: 100px;
-  border-width: 0;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-flex;
-/*  font-family: CircularStd,sans-serif;*/
-  font-size: .9rem;
-  height: auto;
-  justify-content: center;
-  line-height: 1.5;
-  padding: 6px 18px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color .2s,background-position .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: top;
-  white-space: nowrap;
+
+.bookBtns {
+	display: flex;
+	justify-content: space-between;
+}
+
+.bookBtns button {
+ 	font-size: var(--size-400);
+ 	border: none;
 }
 
 .btn:active,
-.btn:focus, {
+.btn:focus {
   outline: none;
 }
 
@@ -112,42 +124,66 @@ box-shadow: 0px 10px 10px black;
 
 /*FONTS*/
 
-.asul-regular {
-  font-family: "Asul", serif;
+.forum-regular {
+  font-family: "Forum", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.asul-bold {
-  font-family: "Asul", serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
 /*MODAL*/
 
 #dialog {
+/*	display: flex;*/
 	padding: 40px;
 	border-radius: 10px;
+	width: fit-content;
 }
 
-#dialog div{
+#dialog h2 {
+	font-size: var(--size-800);
+	text-align: center;
+}
+
+form {
 	display: flex;
 	flex-direction: column;
-	gap: 6px;
-	margin-bottom: 10px;
-	font-size: 2em;
-	width: 300px;
+	align-items: center;
+	gap: 20px;
 }
 
-#dialog p {
+.textInput {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 1rem;
+}
+
+.radio {
+	display: flex;
+	gap: 20px;
 	font-size: 2em;
 	margin-top: 0;
 }
 
-#dialog input {
-	font-size: 1em;
+.radio div {
+		display: flex;
+		gap: 5px;
 }
+
+.modalBtns {
+	 	margin-top: 20px;
+}
+
+#dialog button {
+ 	font-size: var(--size-500);
+}
+
+#dialog label,  
+#dialog input {
+	font-size: var(--size-600);
+}
+
 
 
 

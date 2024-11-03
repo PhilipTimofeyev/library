@@ -12,7 +12,7 @@ class Book {
 class Library {
 
   constructor() {
-    this.bookShelf = [donQuixote, warAndPeace]
+    this.bookShelf = [donQuixote, warAndPeace, crimeAndPunishment, illiad]
   }
 
   addBook(book) {
@@ -71,6 +71,8 @@ class Library {
 // Default Books
 const donQuixote = new Book("Don Quixote", "Miguel de Cervantes", 1072, 'Read')
 const warAndPeace = new Book("War and Peace", "Leo Tolstoy", 1296, 'Read')
+const crimeAndPunishment = new Book("Crime and Punishment", "Fyodor Dostoevsky", 608, 'Read')
+const illiad = new Book("Illiad", "Homer", 683, 'Read')
 
 const showBooksBtn = document.getElementById("showBooksBtn")
 const removeBookBtn = document.querySelector(`[data-remove="${document.id}"]`)
